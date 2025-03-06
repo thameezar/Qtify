@@ -1,10 +1,13 @@
-.button {
-    margin-left: 15px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #121212;     
+
+.Button {
+    background-color: #121212;
     color: #34c94b;
-    border-radius: 5px;
-    cursor: pointer;
+    border: none;
+    border-radius: 5px;               /* Rounded corners */
+    padding: 10px 20px;                /* Padding for the button */
+    font-size: 16px;                   /* Font size */
+    font-family: 'Poppins', sans-serif; /* Poppins font */
+    cursor: pointer;                  /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    margin-left: auto;
   }

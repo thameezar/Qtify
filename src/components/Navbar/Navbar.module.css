@@ -38,14 +38,4 @@
   z-index: 5;                      /* Ensure the search box stays behind the logo */
 }
 
-.feedbackButton {
-  margin-left: 15px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  background-color: #121212;     
-  color: #34c94b;
-  border-radius: 5px;
-  cursor: pointer;
-}
 

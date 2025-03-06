@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-function Button() {
+function Button({text}) {
   return (
-    <button>Give Feedback</button>
+    <button className={styles.Button}>
+      {text}
+      </button>
   );
 }
 

@@ -17,7 +17,7 @@ function Navbar({ searchData }) {
         searchData={searchData}
         className= {styles.searchBox}
         />   
-      <Button className = {styles.feedbackButton}>Give Feedback</Button>
+      <Button text="Give Feedback" />
       </div>
     </nav>
   );
