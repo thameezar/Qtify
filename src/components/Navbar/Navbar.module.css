@@ -1,0 +1,51 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;  /* Space out the items: logo, search box, and feedback button */
+ align-items: center;             /* Center items vertically */
+  background-color: #34c94b;
+  padding: 10px 20px;
+  position: relative;              /* To handle absolute positioning for logo */
+}
+
+.logo {
+  position: absolute;              /* Keep the logo positioned on the left */
+  left: 10px;                      /* Space between the logo and the left side of the navbar*/ 
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;                     /* Ensure logo stays above the search box */
+}
+
+/* Search box styling */
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;                    /* Allow searchWrapper to grow and take space between logo and button */
+  justify-content: center;         /* Center the search box horizontally */
+  gap: 20px;                       /* Adds space between logo and search box */
+}
+
+/* Search box itself */
+.searchBox {
+  padding-left: 40px;              /* To make space for the logo inside the search box*/
+  padding-right: 10px;
+  width: 300px;                    /* Adjust the width of the search box*/ 
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  position: relative;
+  z-index: 5;                      /* Ensure the search box stays behind the logo */
+}
+
+.feedbackButton {
+  margin-left: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #121212;     
+  color: #34c94b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
