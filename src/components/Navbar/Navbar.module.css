@@ -1,41 +1,68 @@
-
+/* Navbar container */
 .navbar {
   display: flex;
-  justify-content: space-between;  /* Space out the items: logo, search box, and feedback button */
- align-items: center;             /* Center items vertically */
+  justify-content: space-between;  /* Space between the logo and the feedback button */
+  align-items: center;             /* Vertically center the items */
   background-color: #34c94b;
   padding: 10px 20px;
-  position: relative;              /* To handle absolute positioning for logo */
+  width: 100%;
+  box-sizing: border-box;
 }
-
-.logo {
-  position: absolute;              /* Keep the logo positioned on the left */
-  left: 10px;                      /* Space between the logo and the left side of the navbar*/ 
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;                     /* Ensure logo stays above the search box */
-}
-
-/* Search box styling */
+/* Wrapper for logo, search box, and feedback button */
 .searchWrapper {
   display: flex;
   align-items: center;
-  flex-grow: 1;                    /* Allow searchWrapper to grow and take space between logo and button */
   justify-content: center;         /* Center the search box horizontally */
-  gap: 20px;                       /* Adds space between logo and search box */
+  gap: 20px;                       /* Adds space between the logo and the search box */
+  flex-grow: 1;                    /* Allow searchWrapper to take space between logo and button */
+  width: 100%;                     /* Take full width */
+  position: relative;              /* For centering the search box */
 }
 
-/* Search box itself */
+
+
+/* Styling for the Search Box */
 .searchBox {
-  padding-left: 40px;              /* To make space for the logo inside the search box*/
+  padding-left: 40px;              /* Space for the logo inside the search box */
   padding-right: 10px;
-  width: 300px;                    /* Adjust the width of the search box*/ 
-  padding: 10px;
+  width: 700px;                    /* Increased width of the search box */
+  padding: 12px 20px;              /* Adjust padding */
   border-radius: 20px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 18px;                 /* Larger font for better visibility */
   position: relative;
-  z-index: 5;                      /* Ensure the search box stays behind the logo */
+  z-index: 5;                      /* Ensure it stays below the logo */
+  flex-grow: 1;                    /* Allow the search box to take up the remaining space */
+  margin-left: 20px;               /* Adds some margin to the left of the search box */
+  box-sizing: border-box;          /* Make sure padding is included in width */
 }
 
 
+
+/* Styling for the Logo */
+.logo {
+  flex-shrink: 0;                  /* Prevent logo from shrinking */
+  margin-right: 20px;              /* Space between logo and search box */
+  z-index: 10;                     /* Ensure the logo stays above the search box */
+}
+
+
+/* Styling for the Feedback Button */
+.feedbackButton {
+  padding: 10px 20px;
+  background-color: #121212;
+  color: #34c94b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 16px;
+  flex-shrink: 0;                  /* Prevent the button from shrinking */
+}
+
+.search {
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color-black);
+  width: 100%;  /* Ensure it takes up the full width of the parent container */
+}
