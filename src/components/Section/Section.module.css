@@ -1,0 +1,38 @@
+.sectionContainer {
+    padding: 20px;
+    background-color: #121212;
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+  }
+  
+  .collapseButton {
+    background-color: #34c94b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust columns for responsiveness */
+    gap: 10px; /* Adjust this to reduce or increase spacing between cards */
+  }
+  
+  .cardContainer .card {
+    margin: 0; /* Remove margin if present */
+  }
+  
