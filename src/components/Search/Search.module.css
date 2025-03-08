@@ -1,38 +1,45 @@
-.search {
-  padding: 14px 20px;
-  height: 48px;                     /* Set a consistent height */
-  border-radius: 8px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border: 1px solid var(--color-black);
-  width: 100%;                      /* Ensure it uses 100% of the available width */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  /* Prevents excessive stretching */
+  margin: auto;
 }
 
 .wrapper {
   display: flex;
   align-items: center;
+  width: 100%;
+}
+
+.searchWrapper {
+  flex: 1;
+  /* Allows it to expand fully inside flexbox */
+  width: 100%;
+}
+
+.search {
+  padding: 14px 20px;
   height: 48px;
+  border-radius: 8px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid var(--color-black);
+  width: 100%;
+  max-width: 100%;
+  /* Prevents shrinking */
+  min-width: 0;
+  /* Ensures it doesn't break flex */
 }
 
 .searchButton {
+  flex-shrink: 0;
+  /* Prevents button from shrinking input */
   border-radius: 0px 8px 8px 0px;
   padding: 14px 20px;
   height: 100%;
   border: 1px solid var(--color-black);
   border-left: none;
   cursor: pointer;
-}
-
-.listElement {
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.albumTitle {
-  font-size: 16px;
-}
-
-.albumArtists {
-  font-size: 12px;
 }
