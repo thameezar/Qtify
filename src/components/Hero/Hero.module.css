@@ -1,13 +1,13 @@
 .hero {
-    background-color: #121212;
-    height: 270px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-  }
-  
+  background-color: #121212;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
 .hero h1{
-  color: #FFFFFF;
+color: #FFFFFF;
 }

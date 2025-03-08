@@ -1,32 +1,16 @@
 .search {
   padding: 14px 20px;
-  border-radius: 8px;
-  border: 1px solid var(--color-black);
-  width: 100%;  /* Ensure it takes up the full width */
-  
-}
-
-.wrapper {
-  display: flex;
-  align-items: stretch;
-  height: 48px;
-  width: 100%;
-}
-
-
-.search {
-  padding: 5px 20px;
-  height: 90%;
+  height: 48px;                     /* Set a consistent height */
   border-radius: 8px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   border: 1px solid var(--color-black);
-  width: 502px;
+  width: 100%;                      /* Ensure it uses 100% of the available width */
 }
 
 .wrapper {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   height: 48px;
 }
 
@@ -37,7 +21,6 @@
   border: 1px solid var(--color-black);
   border-left: none;
   cursor: pointer;
-  height: 100%;
 }
 
 .listElement {
