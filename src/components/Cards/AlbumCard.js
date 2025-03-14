@@ -11,10 +11,11 @@ function AlbumCard({ album }) {
         className={styles.albumImage}
       />
       <div className={styles.cardContent}>
-        <h3>{album.title}</h3>
-        <Chip label={`${album.followCount} Follows`} color="primary" className={styles.chip} />
+        <Chip label={`${album.follows} Follows`}  className={styles.chip} />
       </div>
+      <h3 className={styles.albumTitle}>{album.title}</h3>
     </div>
+    
   );
 }
 

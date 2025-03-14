@@ -1,35 +1,52 @@
 .card {
-    background-color: #121212;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .albumImage {
-    width: 100%;
-    height: 200px; /* Adjust the image height as necessary */
-    object-fit: cover;
-  }
-  
-  .cardContent {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 60px; /* Adjust for the space below the image */
-    background-color: white;
-  }
-  
-  .cardContent h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-    color: white;
-  }
-  
-  .chip {
-    margin-top: 8px;
-  }
-  
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Keep this to ensure the image and content are clipped */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 18px;
+}
+
+.albumImage {
+  width: 159%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 8px 16px;  /* Reduced padding for smaller size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Adjust this to vertically center content */
+  height: 40px; /* Reduced height for smaller content area */
+  background-color: white;
+  border-bottom-left-radius: 10px;  /* Rounded bottom left */
+  border-bottom-right-radius: 10px; /* Rounded bottom right */
+}
+
+.cardContent h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: black;
+}
+
+.chip {
+  margin-top: 8px;
+  width: 121px;
+  height: 23px;
+  border-radius: 10px;
+  font-size: 10px;
+  background-color: #121212 !important;
+  color: #FFFFFF !important;
+}
+
+.albumTitle {
+  font-size: 1.2rem;
+  font-weight: normal;
+  padding: 8px;
+  color: #FFFFFF;
+  margin-top: 6px;
+}
