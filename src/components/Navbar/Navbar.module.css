@@ -11,14 +11,15 @@
 }
 
 .logo {
-  position: absolute;
-  /* Keep the logo positioned on the left */
+ /* position: absolute;
+  /* Keep the logo positioned on the left 
   left: 10px;
-  /* Space between the logo and the left side of the navbar*/
+  /* Space between the logo and the left side of the navbar
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
   /* Ensure logo stays above the search box */
+  margin-left: 10px;
 }
 
 /* Search box styling */
