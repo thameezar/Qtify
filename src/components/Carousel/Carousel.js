@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules'; // Correct import for Navigation in Swiper 11.x
-import 'swiper/css'; // Import Swiper's CSS (Swiper 6/7)
+import 'swiper/css'; // Import Swiper's CSS
 
-import LeftArrow from "./LeftArrow"; // Import Left Arrow component
-import RightArrow from "./RightArrow"; // Import Right Arrow component
+import LeftArrow from "./LeftArrow"; // Custom Left Arrow component
+import RightArrow from "./RightArrow"; // Custom Right Arrow component
 import AlbumCard from "../Cards/AlbumCard"; // Import AlbumCard component
 
 const Carousel = ({ albums }) => {
@@ -43,18 +43,18 @@ const Carousel = ({ albums }) => {
       >
         {albums.map((album) => (
           <SwiperSlide key={album.id}>
-            <AlbumCard album={album} /> {/* Your AlbumCard component */}
+            <AlbumCard album={album} />
           </SwiperSlide>
         ))}
 
         {/* Custom Left Arrow Button */}
         <div className="swiper-button-prev" ref={prevRef}>
-          <LeftArrow /> {/* Custom Left Arrow */}
+          <LeftArrow />
         </div>
 
         {/* Custom Right Arrow Button */}
         <div className="swiper-button-next" ref={nextRef}>
-          <RightArrow /> {/* Custom Right Arrow */}
+          <RightArrow />
         </div>
       </Swiper>
     </div>

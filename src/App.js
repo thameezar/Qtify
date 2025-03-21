@@ -23,10 +23,11 @@ export default App;
 */
 
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router,Route} from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
 import Hero from "./components/Hero/Hero";
 import Section from "./components/Section/Section";
+import SongsSection from "./components/SongsSection/SongsSection";
 
 function App() {
   const topAlbumsAPI = "https://qtify-backend-labs.crio.do/albums";
@@ -35,6 +36,7 @@ function App() {
       <Navbar />
       <Hero />
       <Section apiEndpoint={topAlbumsAPI} />
+      <SongsSection />
     </Router>
   );
 }

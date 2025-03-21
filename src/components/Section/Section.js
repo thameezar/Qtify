@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import AlbumCard from "../Cards/AlbumCard"; // Ensure this path is correct for your project
+import AlbumCard from "../Cards/AlbumCard";
 import Carousel from "../Carousel/Carousel"; // Import the Carousel component
 import styles from "./Section.module.css";
 
@@ -47,7 +47,7 @@ function Section() {
 
       {/* Conditionally render the Top Albums using either Grid or Carousel */}
       {collapsed ? (
-        <Carousel albums={albums} /> // Show Carousel when collapsed
+        <Carousel albums={albums} />
       ) : (
         <div className={styles.cardContainer}>
           {albums.map((album) => (
@@ -63,20 +63,20 @@ function Section() {
           className={styles.collapseButton}
           onClick={() => setCollapsedNewSongs(!collapsedNewSongs)}
         >
-          {collapsedNewSongs ? "Show All" : "Collapse"}
+          Show all
         </button>
       </div>
 
       {/* New Albums rendering */}
-      <div className={styles.cardContainer}>
-        {collapsedNewSongs
-          ? newSongs.slice(0, 5).map((song) => (
-              <AlbumCard key={song.id} album={song} />
-            ))
-          : newSongs.map((song) => (
-              <AlbumCard key={song.id} album={song} />
-            ))}
-      </div>
+      {collapsedNewSongs ? (
+        <Carousel albums={newSongs} />
+      ) : (
+        <div className={styles.cardContainer}>
+          {newSongs.map((song) => (
+            <AlbumCard key={song.id} album={song} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
