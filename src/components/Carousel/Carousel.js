@@ -1,81 +1,64 @@
-/*
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
-import AlbumCard from "../Cards/AlbumCard"; // Ensure correct path
+import { Navigation } from 'swiper/modules'; // Correct import for Navigation in Swiper 11.x
+import 'swiper/css'; // Import Swiper's CSS (Swiper 6/7)
 
-function Carousel({ albums }) {
+import LeftArrow from "./LeftArrow"; // Import Left Arrow component
+import RightArrow from "./RightArrow"; // Import Right Arrow component
+import AlbumCard from "../Cards/AlbumCard"; // Import AlbumCard component
+
+const Carousel = ({ albums }) => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  // Ensuring the navigation buttons are correctly set after the component mounts
+  useEffect(() => {
+    if (prevRef.current && nextRef.current) {
+      // You can initialize the Swiper with the buttons now
+    }
+  }, []);
+
   return (
-    <Swiper
-      spaceBetween={10} // Space between slides
-      slidesPerView={1} // Adjust number of slides per view based on screen size
-      breakpoints={{
-        640: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        1024: {
-          slidesPerView: 4,
-        },
-      }}
-    >
-      {albums.map((album) => (
-        <SwiperSlide key={album.id}>
-          <AlbumCard album={album} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  );
-}
-
-export default Carousel;
-*/
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css'; // Import Swiper styles
-import AlbumCard from "../Cards/AlbumCard"; // Import AlbumCard
-import { ReactComponent as LeftArrow } from "../../assets/left-arrow.svg"; // Import Left Arrow
-import { ReactComponent as RightArrow } from "../../assets/right-arrow.svg"; // Import Right Arrow
-import styles from "./Carousel.module.css";
-
-function Carousel({ albums }) {
-  return (
-    <div className={styles.carouselContainer}>
+    <div className="carousel-container">
       <Swiper
-        spaceBetween={10}
-        slidesPerView={3}
+        spaceBetween={20} // Space between each slide
+        slidesPerView="auto" // Auto slides per view
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        modules={[Navigation]} // Enable navigation module
+        loop={false} // Disable loop
         breakpoints={{
           640: {
-            slidesPerView: 1,
+            slidesPerView: 2, // 2 cards on small screens
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 4, // 4 cards on medium screens
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 6, // 6 cards on larger screens
           },
-        }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
         }}
       >
         {albums.map((album) => (
           <SwiperSlide key={album.id}>
-            <AlbumCard album={album} />
+            <AlbumCard album={album} /> {/* Your AlbumCard component */}
           </SwiperSlide>
         ))}
+
+        {/* Custom Left Arrow Button */}
+        <div className="swiper-button-prev" ref={prevRef}>
+          <LeftArrow /> {/* Custom Left Arrow */}
+        </div>
+
+        {/* Custom Right Arrow Button */}
+        <div className="swiper-button-next" ref={nextRef}>
+          <RightArrow /> {/* Custom Right Arrow */}
+        </div>
       </Swiper>
-      <div className="swiper-button-prev">
-        <LeftArrow className={styles.arrow} />
-      </div>
-      <div className="swiper-button-next">
-        <RightArrow className={styles.arrow} />
-      </div>
     </div>
   );
-}
+};
 
 export default Carousel;

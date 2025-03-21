@@ -1,4 +1,4 @@
-/*.sectionContainer {
+.sectionContainer {
     padding: 20px;
     background-color: #121212;
   }
@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    gap: 10px;
   }
   
   .sectionHeader h2 {
@@ -18,27 +19,34 @@
   }
   
   .collapseButton {
-    background-color: #34c94b;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 5px;
+    background-color: transparent; /* Remove background */
+    color: #34c94b; /* Set text color to green */
+    border: none; /* Remove border */
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Make it clickable */
+
+    padding: 0; /* Remove padding to make it text-only */
+    font-weight: bold;
   }
+  
+  .collapseButton:hover {
+    color: #2f9e3d; /* Darker green on hover */
+  }
+  
   
   .cardContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust columns for responsiveness 
-    gap: 10px; /* Adjust this to reduce or increase spacing between cards 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust columns for responsiveness */
+    gap: 20px; /* Adjust this to reduce or increase spacing between cards */
   }
   
   .cardContainer .card {
-    margin: 0; /* Remove margin if present 
+    margin: 0; /* Remove margin if present */
   }
 
- */
-
- .sectionContainer {
+ 
+/* Section.module.css 
+.sectionContainer {
   padding: 20px;
   background-color: #121212;
 }
@@ -71,3 +79,53 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
 }
+
+/* New styles for carousel 
+.carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden; /* Hide overflow horizontally 
+}
+
+.carousel {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Enable horizontal scrolling 
+  scroll-behavior: smooth; /* Smooth scroll effect 
+  padding: 10px;
+}
+
+.arrowButtonLeft,
+.arrowButtonRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #34c94b;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.arrowButtonLeft {
+  left: 0;
+}
+
+.arrowButtonRight {
+  right: 0;
+}
+
+.arrowButtonLeft:hover,
+.arrowButtonRight:hover {
+  background-color: #2f9e3d;
+}
+
+.carouselContainer .card {
+  min-width: 250px; /* Ensure cards have a consistent width 
+  flex-shrink: 0; /* Prevent cards from shrinking 
+}
+*/
